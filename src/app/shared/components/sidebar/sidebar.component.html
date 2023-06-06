@@ -1,0 +1,24 @@
+<input type="checkbox" (change)="changeSidebar($event)" id="menu-toggle">
+
+<div class="sidebar">
+  <div class="sidebar__header">
+    <h3 class="sidebar__header-title">A<span>dministration</span></h3>
+  </div>
+  <div class="sidebar__content">
+    <div class="sidebar__profile">
+      <img src="assets/images/default-user.jpg" class="sidebar__profile-img bg-img" alt="user-image">
+      <h4 class="sidebar__profile-name">{{ userData.name }}</h4>
+      <small class="sidebar__profile-role">Principal</small>
+    </div>
+    <div class="sidebar__menu">
+      <ul>
+        <li *ngFor="let item of menuItems">
+          <a [routerLink]="[item.route]" routerLinkActive="active">
+            <span [class]="item.icon"></span>
+            <small>{{ item.title }}</small>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
